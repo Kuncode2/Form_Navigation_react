@@ -1,24 +1,55 @@
-import {BrowserRouter, Form, Route, Routes} from "react-router-dom"
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Navbar from "./components/Navbar"
-import "./index.css"
-import Formtask from "./pages/Formtask"
-import Login from "./pages/login"
-// BrowserRouter its use for alocating the current postion of the currrent window
+import React from 'react'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import Layout1 from './components/Layout1'
+import Formtask from './pages/Formtask'
+import Login from './pages/Relogin'
+import About from './pages/About'
+import Home from './pages/Home'
+import Layout2 from './components/Layout2'
+import MoreButton from './pages/morebutton'
+
+
+
+const router = createBrowserRouter([
+  {
+    path:'/',
+    element:<Layout1/>,
+    children:[
+      {
+        index: true, 
+        element: <Home />,
+      },
+      {
+        path:'formtask',
+        element:<Formtask/>
+      },
+      {
+        path:'login',
+        element:<Login/>
+      },
+      {
+        path:'about',
+        element:<About/>
+      },
+      {
+        path:'/',
+        element:<Layout2/>,
+        children:[{
+          path:"morebutton",
+          element:<MoreButton/>
+        }]
+      }
+    ],
+
+
+  }
+])
+
 const App = () => {
   return (
-    <BrowserRouter>    
-    <Navbar/>           
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/formtask" element={<Formtask/>}/>
-        <Route path="/login" element={<Login/>}/>
-      </Routes>
-    </BrowserRouter>
-
+    <RouterProvider router={router}/>
   )
 }
 
 export default App
+

@@ -38,14 +38,14 @@ const Login = () => {
               autoComplete="off"
             />
             <br />
-            <label htmlFor="password">Password</label> {/* Fixed htmlFor value */}
+            <label htmlFor="password">Password</label> 
             <input
               type="password"
-              name="password"  // Fixed to match the state key
+              name="password" 
               placeholder="Password"
               id="password"
               value={use.password}
-              onChange={handleclick}  // Added the onChange handler
+              onChange={handleclick} 
               autoComplete="off"
             />
           </form>

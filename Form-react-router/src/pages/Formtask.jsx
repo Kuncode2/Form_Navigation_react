@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { Outlet } from "react-router-dom";
+import "./for.css"
 const Formtask = () => {
   const [user, setUser] = useState({
     username: "",
@@ -18,8 +19,6 @@ const handleinput=(e)=>{
     [name] :value
   })
 }
-
-
 
   return (
     <section>
@@ -97,6 +96,7 @@ const handleinput=(e)=>{
           </div>
         </div>
       </main>
+      <Outlet/>
     </section>
   );
 };

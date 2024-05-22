@@ -1,0 +1,9 @@
+.morebuttonPage {
+    padding: 10px;
+    height: 250px;
+    width: 250px;
+    background-color: #d0d0d0; /* Different gray to distinguish from Layout2 */
+    border: 1px solid #bbb;    /* Border */
+    border-radius: 5px;        /* Rounded corners (optional) */
+  }
+  
